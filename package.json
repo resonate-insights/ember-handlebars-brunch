@@ -1,0 +1,46 @@
+{
+  "name": "ember-handlebars-brunch",
+  "version": "1.0.2",
+  "description": "Adds Ember Handlebars support to brunch for new Emberjs v2 Router",
+  "author": {
+    "name": "Sai Wong"
+  },
+  "contributors": [
+    {
+      "name": "Ilia Choly",
+      "email": "ilia.choly@gmail.com"
+    },
+    {
+      "name": "Steve Bartnesky",
+      "email": "steve.bartnesky@gmail.com"
+    }
+  ],
+  "homepage": "https://github.com/icholy/ember-handlebars-brunch",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/icholy/ember-handlebars-brunch.git"
+  },
+  "main": "./lib/index",
+  "scripts": {
+    "postinstall": "node setup.js postinstall",
+    "test": "node setup.js test"
+  },
+  "engines": {
+    "node": "~0.6.10 || 0.8 || 0.9"
+  },
+  "dependencies": {
+    "coffee-script": "1.4.0"
+  },
+  "devDependencies": {
+    "mocha": "1.7.4",
+    "expect.js": "0.2.0"
+  },
+  "readme": "## Ember Handlebars for Brunch\r\n\r\nThis plugin adds [Ember Handlebars](http://emberjs.com/) template pre-compiling to\r\n[brunch](http://brunch.io), utilizing the latest and greatest EmberJS build (compatible with the new ember v3 router).\r\n\r\n## Usage\r\n\r\nAdd `\"ember-handlebars-brunch\": \"git+ssh://git@github.com:icholy/ember-handlebars-brunch.git\"`. to `package.json` of your brunch app.\r\n\r\nset the templates compiler in `config.coffee` set `precompile` to `true` if you want to enable it\r\n\r\n    templates:\r\n      precompile: true  # default is false\r\n      root: 'templates/'\r\n      defaultExtension: 'hbs'\r\n      joinTo: 'javascripts/app.js' : /^app/\r\n\r\nplace your handlebars templates in the `app/templates/` directory and give them a `.hbs` extension\r\n\r\n\tapp/\r\n\t  templates/\r\n      application.hbs\r\n\t    my_template.hbs\r\n      subdir/\r\n        another_template.hbs\r\n\r\nthe template name will be the path without the `root`\r\n\r\n\tApp.MyView = Ember.View.extend({\r\n\t\ttemplateName: 'my_template'\r\n\t});\r\n\r\nAlso accessible through `Ember.TEMPLATES`\r\n\r\n    var anotherTemplate = Ember.TEMPLATES['subdir/another_template'];\r\n\r\nIf you wish to `require` the template, you have to use the full path\r\n\r\n    require('templates/application');\r\n",
+  "readmeFilename": "README.md",
+  "_id": "ember-handlebars-brunch@1.0.2",
+  "dist": {
+    "shasum": "d60cfba19b9a1880e4428a99ecf0f72dadedd94d"
+  },
+  "_resolved": "git://github.com/fuseelements/ember-handlebars-brunch#9ebd2281cfac95623581ba2535e4263f085bf1b6",
+  "_from": "ember-handlebars-brunch@git://github.com/fuseelements/ember-handlebars-brunch"
+}
